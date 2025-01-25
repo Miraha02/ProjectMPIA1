@@ -34,7 +34,7 @@ void AAIPawn::Tick(float DeltaTime)
 
 	FVector2D ActorLocation2D = FVector2D(GetActorLocation().X, GetActorLocation().Y);
 
-
+	if (Target == nullptr){return;}
 	FVector2D steering = MyMap[State]->behave(Target, ActorLocation2D, MaxSpeed, Velocity);
 
 	Velocity += steering * DeltaTime;

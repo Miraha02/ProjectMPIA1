@@ -6,6 +6,7 @@
 #include "StateMap/FleeMap.h"
 #include "StateMap/PursuitMap.h"
 #include "StateMap/EvadeMap.h"
+#include "StateMap/PathFollowingMap.h"
 
 // Sets default values
 AAIPawn::AAIPawn()
@@ -24,6 +25,7 @@ void AAIPawn::BeginPlay()
 	MyMap.Add(EStateEnum::FLEE, new FleeMap());
 	MyMap.Add(EStateEnum::PURSUIT, new PursuitMap());
 	MyMap.Add(EStateEnum::EVADE, new EvadeMap());
+	MyMap.Add(EStateEnum::FOLLOW_PATH, new PathFollowingMap());
 	
 }
 
@@ -34,7 +36,19 @@ void AAIPawn::Tick(float DeltaTime)
 
 	FVector2D ActorLocation2D = FVector2D(GetActorLocation().X, GetActorLocation().Y);
 
-	if (Target == nullptr){return;}
+	if (Target == nullptr)
+	{
+		Target = GetWorld()->SpawnActor<AActorToTarget>(
+			AActorToTarget::StaticClass(),
+			FVector(0.0f, 0.0f, 0.0f),
+			FRotator(0.0f, 0.0f, 0.0f)
+		);
+		
+		if (Target)
+		{
+			Target->SetActorLocation(FVector(0.0f, 0.0f, 0.0f));
+		}
+	}
 	FVector2D steering = MyMap[State]->behave(Target, ActorLocation2D, MaxSpeed, Velocity);
 
 	Velocity += steering * DeltaTime;

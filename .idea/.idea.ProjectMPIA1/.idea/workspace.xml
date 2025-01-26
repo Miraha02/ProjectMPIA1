@@ -13,16 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f50fcb8-dcc8-4f37-854f-080a315f3afe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/ProjectMPIA1/StateMap/PathFollowingMap.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ProjectMPIA1/StateMap/PathFollowingMap.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMPIA1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMPIA1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/AIP_Pawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/AIP_Pawn.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BP_MyCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BP_MyCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ProjectMPIA1/AIPawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectMPIA1/AIPawn.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjectMPIA1/ActorToTarget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectMPIA1/ActorToTarget.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjectMPIA1/ActorToTarget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectMPIA1/ActorToTarget.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjectMPIA1/Enum/StateEnum.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectMPIA1/Enum/StateEnum.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjectMPIA1/ProjectMPIA1.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectMPIA1/ProjectMPIA1.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjectMPIA1/AIPawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectMPIA1/AIPawn.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +166,8 @@
       <workItem from="1737838303182" duration="346000" />
       <workItem from="1737838731961" duration="236000" />
       <workItem from="1737839373793" duration="3924000" />
-      <workItem from="1737898002034" duration="7068000" />
+      <workItem from="1737898002034" duration="7674000" />
+      <workItem from="1737915093175" duration="5501000" />
     </task>
     <servers />
   </component>

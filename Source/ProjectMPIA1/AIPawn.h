@@ -26,6 +26,8 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
 	float MaxSpeed;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
+	float SLowingDistance;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
 	EStateEnum State;

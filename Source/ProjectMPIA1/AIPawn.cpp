@@ -49,11 +49,18 @@ void AAIPawn::Tick(float DeltaTime)
 			Target->SetActorLocation(FVector(0.0f, 0.0f, 0.0f));
 		}
 	}
-	FVector2D steering = MyMap[State]->behave(Target, ActorLocation2D, MaxSpeed, Velocity);
 
+	
+	float Distance = (Target->Location - ActorLocation2D).Size();
+	float rampedSpeed = DeltaTime * MaxSpeed * Distance/SLowingDistance;
+	UE_LOG(LogTemp, Display, TEXT("RampedSpeed : %f"), rampedSpeed);
+	
+	FVector2D steering = MyMap[State]->behave(Target, ActorLocation2D, std::min(MaxSpeed,rampedSpeed), Velocity);
+	
 	Velocity += steering * DeltaTime;
-
-	if (Velocity.Size() > MaxSpeed) {
+	
+	if (Velocity.Size() > MaxSpeed)
+	{
 		Velocity = Velocity.GetSafeNormal() * MaxSpeed;
 	}
 

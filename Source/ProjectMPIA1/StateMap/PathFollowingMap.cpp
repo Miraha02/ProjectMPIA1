@@ -2,8 +2,9 @@
 
 #include "AITestsCommon.h"
 #include "../MyGameInstance.h"
+#include "SeekMap.h"
 
-FVector2D PathFollowingMap::behave(AActorToTarget* Target, FVector2D ActorLocation2D, float MaxSpeed, FVector2D Velocity)
+FVector2D PathFollowingMap::behave(AActorToTarget* Target, FVector2D ActorLocation2D, float MaxSpeed, FVector2D Velocity, float DeltaTime)
 {
 	UMyGameInstance* GameInstance = UMyGameInstance::GetMyGameInstance(FAITestHelpers::GetWorld());
 	
@@ -15,9 +16,24 @@ FVector2D PathFollowingMap::behave(AActorToTarget* Target, FVector2D ActorLocati
 		TargetVector2d = GameInstance->GetPath()[GameInstance->TargetIndex];
 	}
 	
-	FVector2D desired_velocity = TargetVector2d - ActorLocation2D;
-	desired_velocity = desired_velocity.GetSafeNormal() * MaxSpeed;
-	FVector2D steering = desired_velocity - Velocity;
 
-	return steering;
+	FVector2D desired_velocity = TargetVector2d - ActorLocation2D;
+	float distance = desired_velocity.Length();
+	float ramped_speed = MaxSpeed * (distance / 250);
+	float clipped_speed = std::min(ramped_speed, MaxSpeed);
+
+	desired_velocity = desired_velocity.GetSafeNormal() * clipped_speed;
+	
+	float brakingFactor = 2.0f;
+	FVector2D steering = desired_velocity - Velocity;
+	steering *= brakingFactor;
+
+	Velocity += steering * DeltaTime;
+
+	if (Velocity.Size() > MaxSpeed)
+	{
+		Velocity = Velocity.GetSafeNormal() * MaxSpeed;
+	}
+
+	return Velocity;
 }

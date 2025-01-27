@@ -13,5 +13,5 @@ FVector2D FleeMap::behave(AActorToTarget* Target, FVector2D ActorLocation2D, flo
 		Velocity = Velocity.GetSafeNormal() * MaxSpeed;
 	}
 
-	return steering;
+	return Velocity;
 }

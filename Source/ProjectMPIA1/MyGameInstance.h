@@ -20,6 +20,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
 	int32 PathSize = 15;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
 	int TargetIndex = 0;
 public:
 	// Getter for the path

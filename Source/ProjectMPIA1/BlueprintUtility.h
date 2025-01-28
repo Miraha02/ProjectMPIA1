@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Enum/StateEnum.h"
+#include "Enum/TargetEnum.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "BlueprintUtility.generated.h"
 
@@ -15,7 +16,10 @@ class PROJECTMPIA1_API UBlueprintUtility : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 	
-	// Fonction pour obtenir toutes les valeurs de l'énumération
+	// Fonction pour obtenir toutes les valeurs de l'ï¿½numï¿½ration
 	UFUNCTION(BlueprintPure, Category = "Utilities|Enum")
 	static TArray<EStateEnum> GetAllEnumValues();
+
+	UFUNCTION(BlueprintPure, Category = "Utilities|Enum")
+	static TArray<ETargetEnum> GetAllTargetEnumValues();
 };

@@ -12,6 +12,9 @@ class PROJECTMPIA1_API UMyGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 public:
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
+	float TargetMaxSpeed = 15;
 	// Path defined as a TArray
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Blueprintable, Category = "Path")
 	float MinDist;
@@ -31,6 +34,15 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
 	float StopSpeed = 1.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
+	float UpLimit = 1845.f;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
+	float DownLimit = -2210.f;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
+	float LeftLimit = 3685.f;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
+	float RightLimit = -3545.f;
 public:
 	// Getter for the path
 	UFUNCTION(BlueprintCallable, Category = "Path")

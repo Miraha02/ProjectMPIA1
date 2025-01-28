@@ -49,8 +49,8 @@ void AActorToTarget::Tick(float DeltaTime)
 		desired_velocity = desired_velocity.GetSafeNormal() * MaxSpeed;
 		steering = desired_velocity - Velocity;
 		
-		steering.X += FMath::RandRange(-100.0f, 100.0f);
-		steering.Y += FMath::RandRange(-100.0f, 100.0f);
+		steering.X += FMath::RandRange(-50.0f, 50.0f);
+		steering.Y += FMath::RandRange(-50.0f, 100.0f);
 		break;
 	default:
 		break;

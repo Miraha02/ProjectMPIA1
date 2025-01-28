@@ -2,7 +2,9 @@
 
 FVector2D PursuitMap::behave(AActorToTarget* Target, FVector2D ActorLocation2D, float MaxSpeed, FVector2D Velocity, float DeltaTime)
 {
-	FVector2D desired_velocity = Target->Location - ActorLocation2D;
+
+	FVector2d TargetEstimated = Target->Location + Target->Velocity * 100;
+	FVector2D desired_velocity = TargetEstimated - ActorLocation2D;
 	desired_velocity = desired_velocity.GetSafeNormal() * MaxSpeed;
 	FVector2D steering = desired_velocity - Velocity;
 

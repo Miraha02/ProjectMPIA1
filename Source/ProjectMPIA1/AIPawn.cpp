@@ -2,10 +2,13 @@
 
 
 #include "AIPawn.h"
+
+#include "StateMap/ArrivalMap.h"
 #include "StateMap/SeekMap.h"
 #include "StateMap/FleeMap.h"
 #include "StateMap/PursuitMap.h"
 #include "StateMap/EvadeMap.h"
+#include "StateMap/ArrivalMap.h"
 #include "StateMap/PathFollowingMap.h"
 
 // Sets default values
@@ -26,6 +29,7 @@ void AAIPawn::BeginPlay()
 	MyMap.Add(EStateEnum::PURSUIT, new PursuitMap());
 	MyMap.Add(EStateEnum::EVADE, new EvadeMap());
 	MyMap.Add(EStateEnum::FOLLOW_PATH, new PathFollowingMap());
+	MyMap.Add(EStateEnum::ARRIVAL, new ArrivalMap());
 	
 }
 
@@ -51,11 +55,16 @@ void AAIPawn::Tick(float DeltaTime)
 	}
 
 	Velocity = MyMap[State]->behave(Target, ActorLocation2D, MaxSpeed, Velocity, DeltaTime);
-
-
+	
 	// Calculer la direction à partir de la vélocité (sans la composante Z)
 	FVector Direction = FVector(Velocity.X, Velocity.Y, 0.0f).GetSafeNormal();
 
+	// Si on ne bouge plus, on update pas la rotation
+	if (Velocity == FVector2d(0,0))
+	{
+		return;
+	}
+	
 	// Créer une rotation en fonction de la direction
 	FRotator NewRotation = Direction.Rotation();
 

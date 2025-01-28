@@ -26,6 +26,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
 	ETargetEnum State;
 	
+	bool beenReached=false;
+	
 public:	
 	// Sets default values for this actor's properties
 	AActorToTarget();

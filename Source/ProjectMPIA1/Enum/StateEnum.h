@@ -15,5 +15,6 @@ enum class EStateEnum : uint8
     FLEE UMETA(DisplayName = "Flee"),       // Valeur associée : 1
     PURSUIT UMETA(DisplayName = "Pursuit"),       // Valeur associée : 2
     EVADE UMETA(DisplayName = "Evade"),       // Valeur associée : 3
-	FOLLOW_PATH UMETA(DisplayName = "Follow Path")       // Valeur associée : 4
+	FOLLOW_PATH UMETA(DisplayName = "Follow Path"),       // Valeur associée : 4
+	ARRIVAL UMETA(DisplayName = "Arrival")       // Valeur associée : 5
 };

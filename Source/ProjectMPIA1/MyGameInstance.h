@@ -22,6 +22,15 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
 	int TargetIndex = 0;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
+	float BrakingFactor = 2;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
+	float StopDistance = 25;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
+	float StopSpeed = 1.f;
 public:
 	// Getter for the path
 	UFUNCTION(BlueprintCallable, Category = "Path")

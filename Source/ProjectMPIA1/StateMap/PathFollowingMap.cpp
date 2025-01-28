@@ -24,9 +24,8 @@ FVector2D PathFollowingMap::behave(AActorToTarget* Target, FVector2D ActorLocati
 
 	desired_velocity = desired_velocity.GetSafeNormal() * clipped_speed;
 	
-	float brakingFactor = 2.0f;
 	FVector2D steering = desired_velocity - Velocity;
-	steering *= brakingFactor;
+	steering *= GameInstance->BrakingFactor;
 
 	Velocity += steering * DeltaTime;
 

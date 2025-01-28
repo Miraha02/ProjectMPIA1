@@ -25,6 +25,12 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
 	ETargetEnum State;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
+	FVector2D FleeLocation;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
+	FVector2D FleeVelocity;
 	
 	bool beenReached=false;
 	

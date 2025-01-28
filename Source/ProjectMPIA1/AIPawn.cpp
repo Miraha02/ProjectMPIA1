@@ -7,7 +7,6 @@
 #include "StateMap/SeekMap.h"
 #include "StateMap/FleeMap.h"
 #include "StateMap/PursuitMap.h"
-#include "StateMap/EvadeMap.h"
 #include "StateMap/ArrivalMap.h"
 #include "StateMap/PathFollowingMap.h"
 
@@ -27,7 +26,6 @@ void AAIPawn::BeginPlay()
 	MyMap.Add(EStateEnum::SEEK, new SeekMap());
 	MyMap.Add(EStateEnum::FLEE, new FleeMap());
 	MyMap.Add(EStateEnum::PURSUIT, new PursuitMap());
-	MyMap.Add(EStateEnum::EVADE, new EvadeMap());
 	MyMap.Add(EStateEnum::FOLLOW_PATH, new PathFollowingMap());
 	MyMap.Add(EStateEnum::ARRIVAL, new ArrivalMap());
 	

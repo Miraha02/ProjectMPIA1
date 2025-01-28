@@ -41,6 +41,11 @@ void AActorToTarget::Tick(float DeltaTime)
 	case ETargetEnum::IDLE:
 		return;
 	case ETargetEnum::EVADE:
+		FVector2D TargetSupposedPosition = FleeLocation + FleeVelocity * 100;
+		FVector2D desiredVelocity = Location - TargetSupposedPosition;
+		desiredVelocity = desiredVelocity.GetSafeNormal() * MaxSpeed;
+		steering = desiredVelocity - Velocity;
+		
 		break;
 	case ETargetEnum::GO_ON:
 

@@ -26,6 +26,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
 	int TargetIndex = 0;
 
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
+	bool Reverse = false;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
 	float BrakingFactor = 2;
 

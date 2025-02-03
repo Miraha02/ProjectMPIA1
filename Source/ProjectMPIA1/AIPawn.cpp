@@ -8,6 +8,8 @@
 #include "StateMap/FleeMap.h"
 #include "StateMap/PursuitMap.h"
 #include "StateMap/ArrivalMap.h"
+#include "StateMap/OneWayMap.h"
+#include "StateMap/TwoWaysMap.h"
 #include "StateMap/PathFollowingMap.h"
 
 // Sets default values
@@ -28,6 +30,8 @@ void AAIPawn::BeginPlay()
 	MyMap.Add(EStateEnum::PURSUIT, new PursuitMap());
 	MyMap.Add(EStateEnum::FOLLOW_PATH, new PathFollowingMap());
 	MyMap.Add(EStateEnum::ARRIVAL, new ArrivalMap());
+	MyMap.Add(EStateEnum::ONE_WAY, new OneWayMap());
+	MyMap.Add(EStateEnum::TWO_WAYS, new TwoWaysMap());
 	
 }
 

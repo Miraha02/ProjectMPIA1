@@ -30,10 +30,6 @@ FVector2D ArrivalMap::behave(AActorToTarget* Target, FVector2D ActorLocation2D, 
 		Velocity = Velocity.GetSafeNormal() * MaxSpeed;
 	}
 
-	/*
-	UE_LOG(LogTemp, Warning, TEXT("Velocity: %f"), Velocity.Size());
-	UE_LOG(LogTemp, Warning, TEXT("Distance: %f"), (Target->Location - ActorLocation2D).Size());
-	*/
 	// Condition d'arrêt si l'acteur est proche de la cible et sa vitesse est faible
 	if ((Target->Location - ActorLocation2D).Size() <= GameInstance->StopDistance && Velocity.Size() < GameInstance->StopSpeed)
 	{

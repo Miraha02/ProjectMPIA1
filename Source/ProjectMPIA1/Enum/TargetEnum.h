@@ -12,6 +12,6 @@ UENUM(Blueprintable)
 enum class ETargetEnum : uint8
 {
     IDLE UMETA(DisplayName = "Idle"),         // Valeur associée : 0
-    GO_ON UMETA(DisplayName = "Go one"),       // Valeur associée : 1
+    GO_ON UMETA(DisplayName = "Go on"),       // Valeur associée : 1
     EVADE UMETA(DisplayName = "Evade"),       // Valeur associée : 2
 };

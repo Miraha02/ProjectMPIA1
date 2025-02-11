@@ -14,12 +14,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7f50fcb8-dcc8-4f37-854f-080a315f3afe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectMPIA1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectMPIA1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjectMPIA1/AIPawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectMPIA1/AIPawn.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjectMPIA1/ActorToTarget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectMPIA1/ActorToTarget.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjectMPIA1/ActorToTarget.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectMPIA1/ActorToTarget.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjectMPIA1/Enum/StateEnum.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectMPIA1/Enum/StateEnum.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjectMPIA1/StateMap/EvadeMap.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ProjectMPIA1/StateMap/EvadeMap.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjectMPIA1/Enum/TargetEnum.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectMPIA1/Enum/TargetEnum.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +169,7 @@
       <workItem from="1738075878865" duration="492000" />
       <workItem from="1738078175504" duration="13394000" />
       <workItem from="1738094411844" duration="1418000" />
+      <workItem from="1739274283225" duration="162000" />
     </task>
     <servers />
   </component>

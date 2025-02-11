@@ -15,7 +15,9 @@ FVector2D TwoWaysMap::behave(AActorToTarget* Target, FVector2D ActorLocation2D, 
 		}
 		int next = GameInstance->Reverse ? -1 : 1;
 		GameInstance->TargetIndex = (GameInstance->TargetIndex + next);
-
+		if (GameInstance->TargetIndex < 0) {
+			GameInstance->TargetIndex = 0;
+		}
 		TargetVector2d = GameInstance->GetPath()[GameInstance->TargetIndex];
 	}
 
@@ -28,7 +30,7 @@ FVector2D TwoWaysMap::behave(AActorToTarget* Target, FVector2D ActorLocation2D, 
 	desired_velocity = desired_velocity.GetSafeNormal() * clipped_speed;
 
 	FVector2D steering = desired_velocity - Velocity;
-	steering *= GameInstance->BrakingFactor;
+	steering *= GameInstance->PathFactor;
 
 	Velocity += steering * DeltaTime;
 

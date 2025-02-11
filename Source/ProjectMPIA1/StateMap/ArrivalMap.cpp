@@ -21,7 +21,10 @@ FVector2D ArrivalMap::behave(AActorToTarget* Target, FVector2D ActorLocation2D, 
 	desired_velocity = desired_velocity.GetSafeNormal() * clipped_speed;
 	
 	FVector2D steering = desired_velocity - Velocity;
-	steering*=GameInstance->BrakingFactor;
+
+	if ((Target->Location - ActorLocation2D).Size() <= GameInstance->BreakingDistance) {
+		steering *= GameInstance->BrakingFactor;
+	}
 
 	Velocity += steering * DeltaTime;
 

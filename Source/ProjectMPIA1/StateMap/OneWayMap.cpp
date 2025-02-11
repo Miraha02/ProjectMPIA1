@@ -31,7 +31,7 @@ FVector2D OneWayMap::behave(AActorToTarget* Target, FVector2D ActorLocation2D, f
 	desired_velocity = desired_velocity.GetSafeNormal() * clipped_speed;
 
 	FVector2D steering = desired_velocity - Velocity;
-	steering *= GameInstance->BrakingFactor;
+	steering *= GameInstance->PathFactor;
 
 	Velocity += steering * DeltaTime;
 

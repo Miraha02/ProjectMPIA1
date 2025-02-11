@@ -32,9 +32,13 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
 	float BrakingFactor = 2;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
+	float PathFactor = 2;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
 	float StopDistance = 25;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
+	float BreakingDistance = 250;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Path")
 	float StopSpeed = 1.f;
